@@ -14,7 +14,7 @@ const config = {
 			default: true
 		},
 		paths: {
-			base: BASE_PATH
+			base: process.env.PUBLIC_BASE_PATH || ''
 		},
 		vite: {
 			resolve: {
