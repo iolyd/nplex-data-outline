@@ -13,6 +13,9 @@ const config = {
 		prerender: {
 			default: true
 		},
+		paths: {
+			base: BASE_PATH
+		},
 		vite: {
 			resolve: {
 				alias: {
