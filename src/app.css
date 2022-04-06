@@ -1,11 +1,26 @@
 :root {
+	--font-main: 'Urbanist', sans-serif;
+	--font-misc: 'BIZ UDPMincho', serif;
+	--light-100: hsl(70, 20%, 98%);
+	--light-300: hsl(90, 18%, 96%);
+	--light-500: hsl(110, 15%, 94%);
+	--light-700: hsl(130, 12%, 91%);
+	--light-900: hsl(150, 10%, 88%);
+	--dark-100: hsl(248, 15%, 45%);
+	--dark-300: hsl(260, 13%, 35%);
+	--dark-500: hsl(370, 11%, 25%);
+	--dark-700: hsl(280, 8%, 15%);
+	--dark-900: hsl(300, 6%, 10%);
+	--accent-100: hsl(108, 61%, 84%);
+	--accent-300: hsl(129, 52%, 75%);
+	--accent-500: hsl(134, 49%, 62%);
+	--accent-700: hsl(143, 53%, 54%);
+	--accent-900: hsl(152, 70%, 36%);
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
-	--font-main: 'Urbanist', sans-serif;
-	--font-misc: 'BIZ UDPMincho', serif;
 	font-family: var(--font-main);
 	font-weight: 500;
 	font-size: 16px;
@@ -18,10 +33,22 @@ body {
 	flex-direction: row;
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
-	background-color: rgb(235,230,220, .5);
+	overflow: hidden auto;
+	background-color: var(--light-500);
 }
 
 * {
 	box-sizing: border-box;
+}
+
+h2 {
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--accent-300);
+	border-bottom: 1px solid var(--accent-300);
+	padding: 1rem 0;
+	margin-top: 1rem;
+	margin-bottom: .5rem;
 }
