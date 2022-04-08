@@ -117,6 +117,9 @@ export const placeData: ProjectsDatum[] = [
 
 export const buildingData: ProjectsDatum[] = [
 	{
+		title: 'Année de construction'
+	},
+	{
 		title: "Mode d'implantation",
 		enum: ['Isolé', 'Jumelé', 'Contigu'],
 		required: true
@@ -162,11 +165,11 @@ export const buildingData: ProjectsDatum[] = [
 
 export const projectData: ProjectsDatum[] = [
 	{
-		title: 'Type de travaux',
+		title: 'Type de projet',
 		enum: ['Nouvelle construction', 'Transformation']
 	},
 	{
-		title: 'Type de projet',
+		title: 'Travaux',
 		enum: [
 			'Construction neuve',
 			'Agrandissement en hauteur de bâtiment',
@@ -181,7 +184,14 @@ export const projectData: ProjectsDatum[] = [
 			'Création de mazzanine',
 			'Excavation de sous-sol',
 			'...'
-		]
+		],
+		multiple: true
+	},
+	{
+		title: 'Coûts approximatifs',
+		description:
+			"Fourchette de prix personalisable où l'éditeur peut définir un prix spécifique, ou un minimum et un maximum (contraint par un écart max.).",
+		required: true
 	},
 	{
 		title: 'Étages touchés par les travaux',
@@ -196,6 +206,13 @@ export const projectData: ProjectsDatum[] = [
 	{
 		title: 'Événements / Phases / Jalons',
 		multiple: true,
-		description: ''
+		description:
+			"Série d'éléments qui constituent le récit du projet. Les éléments peuvent être imbriqués: des phases peuvent contenir  des sous-événements ou des jalons."
+	},
+	{
+		title: "Indicateurs d'exemplarité",
+		description: '',
+		multiple: true,
+		enum: ['Conservation du patrimoine bâti', 'Conservation du patrimoine naturel', '']
 	}
 ];
