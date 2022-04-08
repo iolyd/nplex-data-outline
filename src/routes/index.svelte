@@ -22,12 +22,12 @@
 </aside>
 <main>
 	<h2>Descripteurs du lieu</h2>
-	{#each placeData as d}
-		<DatumCard title={d.title} desc={d.description} values={d.enum} />
+	{#each placeData as datum}
+		<DatumCard {datum} />
 	{/each}
 	<h2>Descripteurs du projet</h2>
-	{#each projectData as d}
-		<DatumCard title={d.title} desc={d.description} values={d.enum} />
+	{#each projectData as datum}
+		<DatumCard {datum} />
 	{/each}
 </main>
 
@@ -41,12 +41,13 @@
 	}
 
 	main {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 80px;
+		padding: 0px;
 		max-width: 1200px;
 		margin: 0 auto;
 		width: 100%;
+		height: auto;
+		border: 1px solid var(--light-900);
 	}
 </style>

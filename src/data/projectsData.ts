@@ -1,22 +1,60 @@
-interface ProjectsDatum {
+export interface ProjectsDatum {
 	title: string;
 	description?: string;
 	enum?: string[];
+	required?: boolean;
+	multiple?: boolean;
 }
 
 export const placeData: ProjectsDatum[] = [
 	{
 		title: 'Type de propriétaire',
-		description: '',
-		enum: ['Particulier', 'Entreprise', 'Public']
+		required: true,
+		description: 'Quel entité est propriétaire du lieu.',
+		enum: ['Particulier', 'Entreprise', 'Municipal']
 	},
 	{
-		title: 'Usage',
-		description: '',
-		enum: ['Résidentiel', 'Communautaire', 'Commercial']
+		title: "Catégorie d'usage principal",
+		required: true,
+		enum: ['Résidentiel', 'Communautaire', 'Commercial', 'Industriel']
 	},
 	{
-		title: 'Typologie/vocation de lieu',
+		title: 'Usage principal',
+		required: true,
+		enum: [
+			'Unifamiliale',
+			'Duplex',
+			'Triplex',
+			'Quadruplex',
+			'Quintuplex',
+			'Sixplex',
+			"Bloc d'appartements",
+			'Co-propriété divise (condos)',
+			'Habitations communautaires',
+			'Habitations personnes âgées',
+			'Parc',
+			'Friche / terrain vacant',
+			'Place publique',
+			'Stationnement',
+			'Rue ou trottoir',
+			'Ruelle',
+			'Restaurant / café / bar',
+			'Commerce de détail',
+			'Commerce de gros',
+			'Bureau',
+			'Bibliothèque',
+			'École',
+			'Établissement événementiel'
+		]
+	},
+	{
+		title: "Catégorie(s) d'usage(s) complémentaire(s)",
+		multiple: true,
+		enum: ['Résidentiel', 'Communautaire', 'Commercial', 'Industriel']
+	},
+	{
+		title: 'Usage(s) complémentaire(s)',
+		multiple: true,
 		description: '',
 		enum: [
 			'Unifamiliale',
@@ -45,36 +83,119 @@ export const placeData: ProjectsDatum[] = [
 		]
 	},
 	{
-		title: 'Groupement de bâtiment',
-		enum: ['Isolé', 'Jumelé', 'Contigu']
-	},
-	{
-		title: 'Zonage',
-		enum: []
+		title: 'Rues adjacentes',
+		description: 'Nombre de rues qui bordent le terrain'
 	},
 	{
 		title: 'Arrondissement',
-		enum: ['']
+		required: true,
+		enum: ['...']
+	},
+	{
+		title: 'Zone',
+		description: "Code de la zone spécifique tel qu'inscrit au zonage."
 	},
 	{
 		title: 'Emplacement',
-		description: 'Localisation géographique (ambiguë?) du site du projet.'
+		description:
+			"Localisation géographique (ambiguë?) du site du projet. Pour assurer l'anonymat des lieux, la localisation pourra être définie à l'aide d'un cercle de précision laissée à la discrétion de l'éditeur de la fiche."
 	},
 	{
-		title: 'Surface du site'
+		title: 'Aire du terrain',
+		description: 'Surface du lot ou du site en m2.'
+	},
+	{
+		title: 'Secteurs & règlements particuliers',
+		multiple: true,
+		enum: [
+			"Plan d'implantation et d'intégration architecturale",
+			"Secteur d'intérêt patrimonial",
+			'...'
+		]
+	}
+];
+
+export const buildingData: ProjectsDatum[] = [
+	{
+		title: "Mode d'implantation",
+		enum: ['Isolé', 'Jumelé', 'Contigu'],
+		required: true
+	},
+	{
+		title: 'Murs partagés',
+		description: 'Nombre de 1 à 4.'
+	},
+	{
+		title: 'Norme patrimoniale',
+		enum: ['A', 'AA', 'B', 'F']
+	},
+	{
+		title: 'Marges',
+		description: 'Marges latérales, avant, et arrière en mètre.'
+	},
+	{
+		title: 'Façade',
+		description: 'Largeur de façade en mètre.'
+	},
+	{
+		title: 'Aire du bâtiment',
+		required: true,
+		description: 'Surface en m2, avant les travaux et après les travaux si changée.'
+	},
+	{
+		title: 'Hauteur de bâtiment',
+		required: true,
+		description:
+			'Hauteur du bâtiment touché par les travaux, en mètre, avant les travaux et après si changée.'
+	},
+	{
+		title: "Nombre d'étages",
+		required: true,
+		description: 'Avant les travaux, et après si changé.'
+	},
+	{
+		title: 'Type de construction',
+		required: true,
+		enum: ['Combustible', 'Incombustible']
 	}
 ];
 
 export const projectData: ProjectsDatum[] = [
 	{
-		title: 'Type de projet',
+		title: 'Type de travaux',
 		enum: ['Nouvelle construction', 'Transformation']
 	},
 	{
-		title: 'Sous-type de projet',
-		enum: ['Agrandissement en hauteur de bâtiment', 'Agrandissement en aire de bâtiment', '...']
+		title: 'Type de projet',
+		enum: [
+			'Construction neuve',
+			'Agrandissement en hauteur de bâtiment',
+			'Agrandissement en aire de bâtiment',
+			"Changement d'usage",
+			'Fusion de logements',
+			'Rénovation de planchers',
+			'Rénovation de revêtement extérieur',
+			'Aménagement de cours arrière',
+			'Rénovation de terrain arrière',
+			'Changement de portes et/ou fenêtres',
+			'Création de mazzanine',
+			'Excavation de sous-sol',
+			'...'
+		]
 	},
 	{
-		title: ''
+		title: 'Étages touchés par les travaux',
+		description: 'Choix multiple.',
+		enum: ['R-d-c', '2', '3', '4', '5', '...']
+	},
+	{
+		title: 'Matériaux',
+		multiple: true,
+		description: ''
+	},
+	{
+		title: 'Événements / Phases / Jalons',
+		multiple: true,
+		description: ''
 	}
 ];
