@@ -25,6 +25,10 @@
 	{#each placeData as datum}
 		<DatumCard {datum} />
 	{/each}
+	<h2>Descripteurs du cadre bâti</h2>
+	{#each placeData as datum}
+		<DatumCard {datum} />
+	{/each}
 	<h2>Descripteurs du projet</h2>
 	{#each projectData as datum}
 		<DatumCard {datum} />

@@ -10,8 +10,8 @@ export const placeData: ProjectsDatum[] = [
 	{
 		title: 'Type de propriétaire',
 		required: true,
-		description: 'Quel entité est propriétaire du lieu.',
-		enum: ['Particulier', 'Entreprise', 'Municipal']
+		description: 'Quelle entité est propriétaire du lieu.',
+		enum: ['Particulier', 'Organisme', 'Entreprise', 'Municipal']
 	},
 	{
 		title: "Catégorie d'usage principal",
@@ -92,6 +92,12 @@ export const placeData: ProjectsDatum[] = [
 		enum: ['...']
 	},
 	{
+		title: 'Quartier',
+		description:
+			'"District" au titre de "sous-quartier", tel que Rosemont dans Rosemont-La-Petite-Patrie.',
+		required: true
+	},
+	{
 		title: 'Zone',
 		description: "Code de la zone spécifique tel qu'inscrit au zonage."
 	},
@@ -101,8 +107,8 @@ export const placeData: ProjectsDatum[] = [
 			"Localisation géographique (ambiguë?) du site du projet. Pour assurer l'anonymat des lieux, la localisation pourra être définie à l'aide d'un cercle de précision laissée à la discrétion de l'éditeur de la fiche."
 	},
 	{
-		title: 'Aire du terrain',
-		description: 'Surface du lot ou du site en m2.'
+		title: 'Superficie du terrain',
+		description: 'Superficie du lot ou du site en m2.'
 	},
 	{
 		title: 'Secteurs & règlements particuliers',
@@ -117,7 +123,8 @@ export const placeData: ProjectsDatum[] = [
 
 export const buildingData: ProjectsDatum[] = [
 	{
-		title: 'Année de construction'
+		title: 'Année de construction',
+		description: "Année de construction d'origine du site"
 	},
 	{
 		title: "Mode d'implantation",
@@ -196,12 +203,12 @@ export const projectData: ProjectsDatum[] = [
 	{
 		title: 'Étages touchés par les travaux',
 		description: 'Choix multiple.',
-		enum: ['R-d-c', '2', '3', '4', '5', '...']
+		enum: ['R-d-c', '2', '3', '4', '5', '...', 'Toiture', 'Terrasse']
 	},
 	{
 		title: 'Matériaux',
 		multiple: true,
-		description: ''
+		enum: ['Québec', 'Canada', 'Faible empreinte écologique', 'Carboneutralité']
 	},
 	{
 		title: 'Événements / Phases / Jalons',
@@ -211,7 +218,7 @@ export const projectData: ProjectsDatum[] = [
 	},
 	{
 		title: "Indicateurs d'exemplarité",
-		description: '',
+		description: 'Pastilles et etc.',
 		multiple: true,
 		enum: ['Conservation du patrimoine bâti', 'Conservation du patrimoine naturel', '']
 	}
