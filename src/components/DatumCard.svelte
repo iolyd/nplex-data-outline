@@ -73,6 +73,7 @@
 		margin: 0 12px;
 		border-radius: 1rem;
 		transition: all 0.2s ease-out;
+		z-index: 0;
 	}
 
 	section:hover {
@@ -113,7 +114,7 @@
 		padding: 1rem;
 	}
 
-	#details.multiple::after {
+	#details.multiple::before {
 		content: '';
 		position: absolute;
 		width: 100%;
