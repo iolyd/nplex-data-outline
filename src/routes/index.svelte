@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 	import DatumCard from '$components/DatumCard.svelte';
-	import { placeData, projectData } from '$data/projectsData';
+	import { buildingData, placeData, projectData } from '$data/projectsData';
 	import { allCollapse, allExpand } from '$stores/cardsState';
 	import Button from '$components/Button.svelte';
 
@@ -26,7 +26,7 @@
 		<DatumCard {datum} />
 	{/each}
 	<h2>Descripteurs du cadre bâti</h2>
-	{#each placeData as datum}
+	{#each buildingData as datum}
 		<DatumCard {datum} />
 	{/each}
 	<h2>Descripteurs du projet</h2>

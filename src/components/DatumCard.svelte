@@ -69,10 +69,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0;
-		padding: 3rem;
-		margin: 0 12px;
-		border-radius: 1rem;
-		transition: all 0.2s ease-out;
+		padding: 2rem;
+		margin: 0 8px;
+		border-radius: 1.5rem;
+		transition: all 0.15s ease-out;
 		z-index: 0;
 	}
 
@@ -91,7 +91,7 @@
 	}
 
 	#title {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-weight: 600;
 		color: var(--dark-500);
 	}
@@ -128,7 +128,7 @@
 	}
 
 	#description {
-		font-size: 1.15rem;
+		font-size: 1rem;
 	}
 
 	#values {
